@@ -19,5 +19,4 @@ class servicio {
             $this->estado = $datos['estado']?? null;
         }
     }
-     
 }
