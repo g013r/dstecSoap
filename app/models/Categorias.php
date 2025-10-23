@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Modelo;
+namespace app\models;
 
-class Categoria {
-    
+class Categorias
+{
+
     public $id;
     public $nombre;
-      public $categoria;
-    public function __construct(array $datos = []) {
+    public $categoria;
+    public function __construct(array $datos = [])
+    {
         if (!empty($datos)) {
             $this->id = $datos['id'] ?? null;
             $this->nombre = $datos['nombre'] ?? null;
@@ -15,6 +17,3 @@ class Categoria {
         }
     }
 }
-
-
-
