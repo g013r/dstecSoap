@@ -1,6 +1,7 @@
 <?php
 
 namespace app\config;
+
 use PDO;
 use PDOException;
 class Database{
@@ -18,9 +19,15 @@ class Database{
     private function __construct(){
         $this->con = null;
         try{
-            $this->con = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $dsn = "mysql:host={$this->host};dbname={$this->db_name};charset=utf8mb4";
+            
+            $this->con = new PDO($dsn, $this->username, $this->password);
+            
+            // Configuramos PDO para lanzar excepciones en caso de error
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conectado a la base de datos correctamente";
+            
+            // Configuramos el modo de obtención predeterminado a objetos
+            $this->con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         }catch(PDOException $e){
             echo "Error al conectar a la base de datos: " . $e->getMessage();
         }
