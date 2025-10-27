@@ -1,46 +1,28 @@
 <?php
 
-namespace app\models;
+class Productos{
+    private $id_producto;
+    private $id_categoria;
+    private $nombre;
+    private $descripcion;
+    private $imagen;
+    private $precio;
+    private $stock;
+    private $estado;
 
-use app\models\Categorias;
 
-class Producto
-{
 
-    public $id;
-    public $categoria_id;
-    public $proveedor_id;
-    public $nombre;
-    public $descripcion;
-    public $precio;
-    public $stock;
-    public $imagen;
-    public $estado;
-    public $fecha_registro;
-    public $categoria;
     public function __construct(array $datos = [])
     {
         if (!empty($datos)) {
-            $this->id = $datos['id'] ?? null;
-            $this->categoria_id = $datos['categoria_id'] ?? null;
-            $this->proveedor_id = $datos['proveedor_id'] ?? null;
-            $this->nombre = $datos['nombre'] ?? null;
-            $this->descripcion = $datos['descripcion'] ?? null;
-            $this->precio = $datos['precio'] ?? 0.00;
-            $this->stock = $datos['stock'] ?? 0;
-            $this->imagen = $datos['imagen'] ?? null;
-            $this->estado = $datos['estado'] ?? 'Activo';
-            $this->fecha_registro = $datos['fecha_registro']   ?? date('Y-m-d H:i:s');
-            $this->categoria = null;
+            $this->id_producto = $datos['id_producto'];
+            $this->id_categoria = $datos['id_categoria'];
+            $this->nombre = $datos['nombre'];
+            $this->descripcion = $datos['descripcion'];
+            $this->imagen = $datos['imagen'];
+            $this->precio = $datos['precio'];
+            $this->stock = $datos['stock'];
+            $this->estado = $datos['estado'];
         }
-    }
-
-    public function setCategoria(Categorias $categoria): void
-    {
-        $this->categoria = $categoria;
-    }
-    public function getCategoria(): ?Categorias
-    {
-        return $this->categoria;
     }
 }

@@ -1,19 +1,20 @@
 <?php
 
-namespace app\models;
+class Categorias{
+    private $id_categoria;
+    private $nombre;
+    private $descripcion;
+    private $estado;
 
-class Categorias
-{
-
-    public $id;
-    public $nombre;
-    public $categoria;
     public function __construct(array $datos = [])
     {
         if (!empty($datos)) {
-            $this->id = $datos['id'] ?? null;
-            $this->nombre = $datos['nombre'] ?? null;
-            $this->categoria = $datos['categoria'] ?? null;
+            $this->id_categoria = $datos['id_categoria'];
+            $this->nombre = $datos['nombre'];
+            $this->descripcion = $datos['descripcion'];
+            $this->estado = $datos['estado'];
         }
     }
+    
+    
 }

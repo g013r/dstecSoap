@@ -1,24 +1,21 @@
 <?php
 
-namespace app\models;
-
 class Servicios
 {
-
-    public $id_servicio;
-    public $nombre;
-    public $descripcion;
-    public $precio;
-    public $estado;
+    private $id_servicio;
+    private $nombre;
+    private $descripcion;
+    private $precio;
+    private $estado;
 
     public function __construct(array $datos = [])
     {
         if (!empty($datos)) {
             $this->id_servicio = $datos['id_servicio'];
-            $this->nombre = $datos['nombre'] ?? null;
-            $this->descripcion = $datos['descripcion'] ?? null;
-            $this->precio = $datos['precio'] ?? null;
-            $this->estado = $datos['estado'] ?? null;
+            $this->nombre = $datos['nombre'];
+            $this->descripcion = $datos['descripcion'];
+            $this->precio = $datos['precio'];
+            $this->estado = $datos['estado'];
         }
     }
 }
