@@ -40,8 +40,7 @@
         <div class="content-wrapper" id="mainContent">
             <!-- Aquí se carga el contenido dinámicamente -->
             <div class="page-header">
-                <h1>Bienvenido a DSTEC</h1>
-                <p>Selecciona una opción del menú lateral</p>
+
             </div>
         </div>
     </div>
