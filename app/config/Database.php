@@ -1,5 +1,8 @@
 <?php
 
+namespace app\config;
+use PDO;
+use PDOException;
 class Database{
     private $host = "localhost";
     private $db_name = "dstec";
@@ -17,8 +20,9 @@ class Database{
         try{
             $this->con = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Conectado a la base de datos correctamente";
         }catch(PDOException $e){
-            echo "Error de conexión: " . $e->getMessage();
+            echo "Error al conectar a la base de datos: " . $e->getMessage();
         }
     }
 
