@@ -37,3 +37,9 @@
         </li>
     </ul>
 </div>
+<nav class="topbar d-flex align-items-center justify-content-end">
+    <button class="btn btn-outline-primary btn-sm btn-user-info d-flex align-items-center gap-2">
+        <i class="bi bi-person-circle"></i>
+        <span class="user-info-name">Admin</span>
+    </button>
+</nav>

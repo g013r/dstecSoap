@@ -12,7 +12,6 @@
 
 <body>
     <!-- Sidebar -->
-    <?php include 'views/layouts/nav.php'; ?>
     
     <!-- Mobile Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -20,22 +19,7 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- Top Bar -->
-        <nav class="topbar">
-            <button class="btn-menu" id="menuToggle">
-                <i class="bi bi-list"></i>
-            </button>
-            <h5 class="mb-0" id="pageTitle">Dashboard</h5>
-            <div class="ms-auto d-flex align-items-center gap-3">
-                <button class="btn btn-sm btn-outline-secondary">
-                    <i class="bi bi-bell"></i>
-                </button>
-                <div class="user-info">
-                    <i class="bi bi-person-circle"></i>
-                    <span>Admin</span>
-                </div>
-            </div>
-        </nav>
-
+        <?php include 'views/layouts/nav.php'; ?>
         <!-- Page Content -->
         <div class="content-wrapper" id="mainContent">
             <!-- Aquí se carga el contenido dinámicamente -->
