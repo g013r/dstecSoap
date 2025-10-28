@@ -1,3 +1,34 @@
+// Función global para cargar contenido dinámicamente
+function loadContent(page, title) {
+    const mainContent = document.getElementById('mainContent');
+    const pageTitle = document.getElementById('pageTitle');
+    
+    // Actualizar título
+    if (pageTitle && title) {
+        pageTitle.textContent = title;
+    }
+
+    // Cargar contenido vía AJAX
+    fetch(page)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar la página');
+            }
+            return response.text();
+        })
+        .then(html => {
+            mainContent.innerHTML = html;
+        })
+        .catch(error => {
+            mainContent.innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    Error al cargar el contenido: ${error.message}
+                </div>
+            `;
+        });
+}
+
 // Toggle Sidebar en móvil
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
@@ -29,37 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
         });
-    }
-
-    // Función para cargar contenido dinámicamente
-    function loadContent(page, title) {
-        // Actualizar título
-        if (pageTitle && title) {
-            pageTitle.textContent = title;
-        }
-
-        // Si es dashboard, mostrar contenido por defecto
-        
-
-        // Cargar contenido vía AJAX
-        fetch(page)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al cargar la página');
-                }
-                return response.text();
-            })
-            .then(html => {
-                mainContent.innerHTML = html;
-            })
-            .catch(error => {
-                mainContent.innerHTML = `
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        Error al cargar el contenido: ${error.message}
-                    </div>
-                `;
-            });
     }
 
     // Manejar clics en enlaces del sidebar

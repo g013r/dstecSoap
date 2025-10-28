@@ -18,6 +18,38 @@
         </li>
 
         <li class="nav-item">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#categoriasMenu" class="nav-link">
+                <i class="bi bi-folder"></i>
+                <span>Categorías</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul class="collapse submenu" id="categoriasMenu">
+                <li>
+                    <a href="#" data-page="views/categorias/listar.php" data-title="Ver Categorías">Ver Categorías</a>
+                </li>
+                <li>
+                    <a href="#" data-page="views/categorias/crear.php" data-title="Nueva Categoría">Nueva Categoría</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#productosMenu" class="nav-link">
+                <i class="bi bi-box-seam"></i>
+                <span>Productos</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul class="collapse submenu" id="productosMenu">
+                <li>
+                    <a href="#" data-page="views/productos/listar.php" data-title="Ver Productos">Ver Productos</a>
+                </li>
+                <li>
+                    <a href="#" data-page="views/productos/crear.php" data-title="Nuevo Producto">Nuevo Producto</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
             <a href="#" data-bs-toggle="collapse" data-bs-target="#serviciosMenu" class="nav-link">
                 <i class="bi bi-tools"></i>
                 <span>Servicios</span>
